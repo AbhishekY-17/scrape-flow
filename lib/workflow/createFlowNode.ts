@@ -7,7 +7,8 @@ export function CreateFlowNode(
 ): AppNode {
     return {
         id: crypto.randomUUID(),
-        type: "Node",
+        type: "FlowScrapeNode",
+        dragHandle: ".drag-handle",
         data: {
             type: nodeType,
             inputs: {},
