@@ -39,11 +39,12 @@ function NodeHeader({taskType, nodeId}: { taskType: TaskType, nodeId: string}) {
             <Button variant={"ghost"} size={"icon"} onClick={() => {
               const node = getNode(nodeId) as AppNode;
               const newX = node.position.x;
-              const newY = node.position.y + node.measured?.height! + 20;
+              const newY = node.position.y + (node.measured?.height ?? 100) + 20;
               const newNode = CreateFlowNode(node.data.type, {
                 x: newX,
                 y: newY,
               });
+              console.log('New Node:', newNode);
               addNodes([newNode])
             }}>
               <CopyIcon size={12} />
