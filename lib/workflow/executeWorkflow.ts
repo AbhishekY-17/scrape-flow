@@ -267,4 +267,4 @@ async function cleanupEnvironment(environment: Environment) {
         .close()
         .catch((err) => console.error("cannot close browser, reason:", err))
     }
-}
+};
